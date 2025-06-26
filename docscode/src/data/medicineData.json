@@ -1,0 +1,467 @@
+[
+  {
+    "brand": "Dolo 650",
+    "generic": "Paracetamol",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Zifi 200",
+    "generic": "Cefixime",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Augmentin 625",
+    "generic": "Amoxicillin + Clavulanic Acid",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Calpol",
+    "generic": "Paracetamol",
+    "type": "Syrup"
+  },
+  {
+    "brand": "Meftal Spas",
+    "generic": "Mefenamic Acid + Dicyclomine",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Allegra",
+    "generic": "Fexofenadine",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Montair LC",
+    "generic": "Montelukast + Levocetirizine",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Cetrizine",
+    "generic": "Cetirizine",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Pantocid DSR",
+    "generic": "Pantoprazole + Domperidone",
+    "type": "Capsule"
+  },
+  {
+    "brand": "Ecosprin",
+    "generic": "Aspirin",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Rantac 150",
+    "generic": "Ranitidine",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Zerodol P",
+    "generic": "Aceclofenac + Paracetamol",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Dexorange",
+    "generic": "Iron + Folic Acid + Vitamin B12",
+    "type": "Syrup"
+  },
+  {
+    "brand": "Sinarest",
+    "generic": "Paracetamol + Phenylephrine + Chlorpheniramine",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Crocin",
+    "generic": "Paracetamol",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Lactihep",
+    "generic": "Lactulose",
+    "type": "Syrup"
+  },
+  {
+    "brand": "Ondem",
+    "generic": "Ondansetron",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Voveran",
+    "generic": "Diclofenac",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Taxim O",
+    "generic": "Cefixime",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Combiflam",
+    "generic": "Ibuprofen + Paracetamol",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Metrogyl",
+    "generic": "Metronidazole",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Clavam 625",
+    "generic": "Amoxicillin + Clavulanic Acid",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Sporidex",
+    "generic": "Cephalexin",
+    "type": "Capsule"
+  },
+  {
+    "brand": "Novamox",
+    "generic": "Amoxicillin",
+    "type": "Capsule"
+  },
+  {
+    "brand": "Azithral",
+    "generic": "Azithromycin",
+    "type": "Tablet"
+  },
+  {
+    "brand": "T-Bact",
+    "generic": "Mupirocin",
+    "type": "Ointment"
+  },
+  {
+    "brand": "Grilinctus",
+    "generic": "Dextromethorphan + Chlorpheniramine + Ammonium Chloride",
+    "type": "Syrup"
+  },
+  {
+    "brand": "Corex",
+    "generic": "Codeine + Chlorpheniramine",
+    "type": "Syrup"
+  },
+  {
+    "brand": "Benadryl",
+    "generic": "Diphenhydramine",
+    "type": "Syrup"
+  },
+  {
+    "brand": "Liv 52",
+    "generic": "Hepatoprotective Herbal Formula",
+    "type": "Syrup"
+  },
+  {
+    "brand": "Digene",
+    "generic": "Magnesium Hydroxide + Aluminium Hydroxide",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Gaviscon",
+    "generic": "Sodium Alginate + Calcium Carbonate",
+    "type": "Syrup"
+  },
+  {
+    "brand": "Zandu Balm",
+    "generic": "Menthol + Eucalyptus Oil",
+    "type": "Balm"
+  },
+  {
+    "brand": "Moov",
+    "generic": "Diclofenac + Menthol",
+    "type": "Cream"
+  },
+  {
+    "brand": "Volini",
+    "generic": "Diclofenac + Linseed Oil",
+    "type": "Spray"
+  },
+  {
+    "brand": "Becosules",
+    "generic": "Multivitamin B Complex",
+    "type": "Capsule"
+  },
+  {
+    "brand": "Neurobion Forte",
+    "generic": "Vitamin B1 + B6 + B12",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Revital H",
+    "generic": "Multivitamins + Ginseng",
+    "type": "Capsule"
+  },
+  {
+    "brand": "Supradyn",
+    "generic": "Multivitamins + Minerals",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Zincovit",
+    "generic": "Multivitamin + Zinc",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Evion 400",
+    "generic": "Vitamin E",
+    "type": "Capsule"
+  },
+  {
+    "brand": "Shelcal 500",
+    "generic": "Calcium + Vitamin D3",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Gemcal",
+    "generic": "Calcium Citrate + Magnesium + Zinc + Vitamin D3",
+    "type": "Capsule"
+  },
+  {
+    "brand": "Ultracet",
+    "generic": "Tramadol + Paracetamol",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Flexon",
+    "generic": "Ibuprofen + Paracetamol",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Pacimol",
+    "generic": "Paracetamol",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Cyclopam",
+    "generic": "Dicyclomine + Paracetamol",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Spasmoproxyvon",
+    "generic": "Dicyclomine + Paracetamol + Tramadol",
+    "type": "Capsule"
+  },
+  {
+    "brand": "Aciloc 150",
+    "generic": "Ranitidine",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Omez",
+    "generic": "Omeprazole",
+    "type": "Capsule"
+  },
+  {
+    "brand": "Rabicip",
+    "generic": "Rabeprazole",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Pantop",
+    "generic": "Pantoprazole",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Domstal",
+    "generic": "Domperidone",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Perinorm",
+    "generic": "Metoclopramide",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Cycloreg",
+    "generic": "Norethisterone",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Primolut N",
+    "generic": "Norethisterone",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Saheli",
+    "generic": "Centchroman",
+    "type": "Tablet"
+  },
+  {
+    "brand": "I-Pill",
+    "generic": "Levonorgestrel",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Clofert",
+    "generic": "Clomiphene",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Letoval",
+    "generic": "Letrozole",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Thyronorm",
+    "generic": "Thyroxine",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Eltroxin",
+    "generic": "Levothyroxine",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Glimy",
+    "generic": "Glimepiride",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Metformin",
+    "generic": "Metformin",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Jardiance",
+    "generic": "Empagliflozin",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Janumet",
+    "generic": "Sitagliptin + Metformin",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Trulicity",
+    "generic": "Dulaglutide",
+    "type": "Injection"
+  },
+  {
+    "brand": "Humalog",
+    "generic": "Insulin Lispro",
+    "type": "Injection"
+  },
+  {
+    "brand": "Actrapid",
+    "generic": "Insulin",
+    "type": "Injection"
+  },
+  {
+    "brand": "Mixtard",
+    "generic": "Insulin",
+    "type": "Injection"
+  },
+  {
+    "brand": "Basalog",
+    "generic": "Insulin Glargine",
+    "type": "Injection"
+  },
+  {
+    "brand": "Foracort",
+    "generic": "Formoterol + Budesonide",
+    "type": "Inhaler"
+  },
+  {
+    "brand": "Seroflo",
+    "generic": "Salmeterol + Fluticasone",
+    "type": "Inhaler"
+  },
+  {
+    "brand": "Asthalin",
+    "generic": "Salbutamol",
+    "type": "Inhaler"
+  },
+  {
+    "brand": "Duolin",
+    "generic": "Ipratropium + Levosalbutamol",
+    "type": "Inhaler"
+  },
+  {
+    "brand": "Levolin",
+    "generic": "Levosalbutamol",
+    "type": "Inhaler"
+  },
+  {
+    "brand": "T-Bact",
+    "generic": "Mupirocin",
+    "type": "Ointment"
+  },
+  {
+    "brand": "Clop",
+    "generic": "Clopidogrel",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Atorva",
+    "generic": "Atorvastatin",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Rosuvas",
+    "generic": "Rosuvastatin",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Eliquis",
+    "generic": "Apixaban",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Xarelto",
+    "generic": "Rivaroxaban",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Ciplox",
+    "generic": "Ciprofloxacin",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Levoflox",
+    "generic": "Levofloxacin",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Oflox",
+    "generic": "Ofloxacin",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Noroxin",
+    "generic": "Norfloxacin",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Floxin",
+    "generic": "Ofloxacin",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Nitrofurantoin",
+    "generic": "Nitrofurantoin",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Doxy",
+    "generic": "Doxycycline",
+    "type": "Capsule"
+  },
+  {
+    "brand": "Lariago",
+    "generic": "Chloroquine",
+    "type": "Tablet"
+  },
+  {
+    "brand": "HCQS",
+    "generic": "Hydroxychloroquine",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Ivermectin",
+    "generic": "Ivermectin",
+    "type": "Tablet"
+  },
+  {
+    "brand": "Albendazole",
+    "generic": "Albendazole",
+    "type": "Tablet"
+  }
+]

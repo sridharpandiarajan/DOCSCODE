@@ -1,0 +1,260 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.visit-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 60px 20px;
+  background-color: #1e1e1e;
+}
+.center-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;  /* or center for full vertical centering */
+  padding: 50px 20px;
+  background-color: #1e1e1e;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* ======================= */
+/* Patient Details Styling */
+/* ======================= */
+
+.add-patient-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #1e1e1e;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.patient-card {
+  background: #2c2c2e;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 700px;
+  color: #ffffff;
+}
+
+.patient-card h3,
+.patient-card h4 {
+  color: #f1f1f1;
+  margin-bottom: 20px;
+  font-size: 22px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 8px;
+}
+
+.patient-card p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.prescription-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.prescription-row input[type="text"],
+.prescription-row input[type="number"] {
+  background: #3a3a3c;
+  border: 1px solid #555;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  flex: 1;
+  min-width: 120px;
+}
+
+.prescription-row label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #444;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: #eee;
+  cursor: pointer;
+}
+
+button {
+  background-color: #4a90e2;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 12px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #357ab8;
+}
+.add-patient-container {
+  min-height: 100vh;
+  background-color: #1e1e1e;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.patient-card {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 800px;
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.patient-card h3,
+.patient-card h4 {
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 6px;
+}
+
+.patient-card p {
+  font-size: 18px;
+  margin: 5px 0 12px;
+}
+
+.prescription-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.prescription-row input[type="text"],
+.prescription-row input[type="number"] {
+  background: #3a3a3a;
+  border: 1px solid #555;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #fff;
+  flex: 1;
+  min-width: 120px;
+  transition: border-color 0.3s;
+}
+.prescription-row input:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.prescription-row label {
+  padding: 8px 12px;
+  border-radius: 12px;
+  color: #eee;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #333;
+  transition: background-color 0.3s;
+}
+.prescription-row input[type="checkbox"]:checked + label {
+  background-color: #4a90e2;
+}
+
+button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-right: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button:hover {
+  background-color: #397acc;
+  transform: scale(1.03);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #555;
+  margin: 20px 0;
+}
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #1e1e1e;
+}
+body {
+  display: block !important;
+}
