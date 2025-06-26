@@ -36,7 +36,7 @@ function AddPatient() {
     }
 
     try {
-      const response = await axios.post("https://docscode-rttc.vercel.app/patients", trimmedData);
+      const response = await axios.post("https://docscode-3.onrender.com/patients", trimmedData);
       const savedPatient = response.data;
 
       navigate("/patient-details", {

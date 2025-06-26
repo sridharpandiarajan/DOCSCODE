@@ -15,7 +15,7 @@ function DashBoard() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get(`https://docscode-rttc.vercel.app/patients/stats/${doctorUsername}`);
+        const res = await axios.get(`https://docscode-3.onrender.com/patients/stats/${doctorUsername}`);
         setTotalPatients(res.data.totalPatients);
         setPatientsToday(res.data.patientsToday);
       } catch (err) {

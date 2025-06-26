@@ -13,7 +13,7 @@ function OldPatient() {
   useEffect(() => {
     const fetchPatients = async () => {
       try {
-        const res = await axios.get(`https://docscode-rttc.vercel.app/patients/doctor/${doctorUsername}`);
+        const res = await axios.get(`https://docscode-3.onrender.com/patients/doctor/${doctorUsername}`);
         setPatients(res.data);
       } catch (err) {
         console.error("❌ Error fetching patients:", err);

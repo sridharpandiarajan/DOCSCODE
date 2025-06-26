@@ -46,7 +46,7 @@ function PatientDetails() {
   };
 
   try {
-    const res = await fetch(`https://docscode-rttc.vercel.app/patients/${patient.patientId}/visit`, {
+    const res = await fetch(`https://docscode-3.onrender.com/patients/${patient.patientId}/visit`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),

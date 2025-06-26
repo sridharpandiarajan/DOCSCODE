@@ -62,7 +62,7 @@ function AddPrescription() {
   }
 
   try {
-    const res = await fetch(`https://docscode-rttc.vercel.app/patients/${patientId}/visit`, {
+    const res = await fetch(`https://docscode-3.onrender.com/patients/${patientId}/visit`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ symptoms, prescriptions }),
