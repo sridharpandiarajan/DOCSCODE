@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import '../css/DashBoard.css';
+import '../CSS/DashBoard.css';
 
 function DashBoard() {
   const navigate = useNavigate();
