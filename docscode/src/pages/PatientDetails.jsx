@@ -177,7 +177,7 @@ function PatientDetails() {
               <p><strong>Patient Name:</strong> ${patient.name}</p>
               <p><strong>Patient ID:</strong> ${patient.patientId}</p>
               <p><strong>Age:</strong> ${patient.age}</p>
-              <p><strong>Symptoms:</strong> ${patient.symptoms}</p>
+              <p><strong>Symptoms:</strong> ${symptoms}</p>
               <p><strong>Date:</strong> ${currentDate}</p>
             </div>
             <div class="clinic-details">
