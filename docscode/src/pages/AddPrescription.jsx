@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import MedicineAutocomplete from "../components/MedicineAutocomplete"; // Adjust path if needed
-import '../css/AddPrescription.css';
+import '../CSS/AddPrescription.css';
 
 function AddPrescription() {
   const location = useLocation();
