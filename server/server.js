@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 // ✅ MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/docscode')
+mongoose.connect('mongodb+srv://sridharpandiarajan12:bhUDOX3a0k7Y2qPD@cluster0.bap30ja.mongodb.net/docscode')
   .then(() => console.log("✅ MongoDB Connected"))
   .catch(err => console.error("❌ MongoDB Error:", err));
 
