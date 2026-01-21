@@ -19,7 +19,6 @@ function PatientDetails() {
   ]);
   const [isSaving, setIsSaving] = useState(false);
 
-  // --- Logic Handlers (Keep exactly as they were) ---
   const handleChange = (index, field, value) => {
     const updated = [...medications];
     if (["tablet", "duration", "dosage"].includes(field)) {
@@ -63,37 +62,133 @@ function PatientDetails() {
     }
   };
 
+  // --- UPDATED PROFESSIONAL PRINT FUNCTION ---
   const handlePrint = () => {
-    // ... (Keep existing print logic) ...
     const printWindow = window.open('', '_blank');
     if (!printWindow) return;
-    const currentDate = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
     
-    const medsHtml = medications.map(med => `
+    // Calculate current visit number (Total visits + 1 new one)
+    const currentVisitNum = (patient.visits?.length || 0) + 1;
+    const currentDate = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    
+    const medsHtml = medications.map(p => `
       <tr>
-        <td style="padding: 10px; border: 1px solid #ddd;">${med.tablet}</td>
-        <td style="text-align:center; border: 1px solid #ddd;">${med.morning ? '1' : '0'}</td>
-        <td style="text-align:center; border: 1px solid #ddd;">${med.evening ? '1' : '0'}</td>
-        <td style="text-align:center; border: 1px solid #ddd;">${med.night ? '1' : '0'}</td>
-        <td style="text-align:center; border: 1px solid #ddd;">${med.duration}</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">${med.dosage}</td>
-      </tr>`).join("");
+        <td class="med-name">${p.tablet}</td>
+        <td class="center">
+          ${p.morning ? '1' : '0'} - ${p.evening ? '1' : '0'} - ${p.night ? '1' : '0'}
+        </td>
+        <td class="center">${p.duration} Days</td>
+        <td>${p.dosage}</td>
+      </tr>
+    `).join("");
 
     const htmlContent = `
-      <html><head><title>Prescription</title>
-      <style>body{font-family:sans-serif;padding:40px;color:#333}table{width:100%;border-collapse:collapse;margin-top:20px}th{background:#f4f4f4;text-align:left;padding:10px;border:1px solid #ddd}</style>
-      </head><body>
-      <div style="border-bottom:2px solid #2563EB;padding-bottom:10px;margin-bottom:20px;display:flex;justify-content:space-between">
-        <div><h2 style="margin:0;color:#2563EB">Dr. ${doctorName}</h2><p style="margin:5px 0">General Physician</p></div>
-        <div style="text-align:right"><p>Date: ${currentDate}</p></div>
-      </div>
-      <div style="background:#f9fafb;padding:15px;border-radius:8px;margin-bottom:20px">
-        <p style="margin:5px 0"><strong>Patient:</strong> ${patient.name} (${patient.age} / ${patient.gender})</p>
-        <p style="margin:5px 0"><strong>ID:</strong> ${patient.patientId}</p>
-        <p style="margin:5px 0"><strong>Diagnosis:</strong> ${symptoms}</p>
-      </div>
-      <table><thead><tr><th>Medicine</th><th>M</th><th>A</th><th>N</th><th>Days</th><th>Dosage</th></tr></thead><tbody>${medsHtml}</tbody></table>
-      </body></html>`;
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Prescription - ${patient.name}</title>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+          body { font-family: 'Inter', sans-serif; padding: 40px; color: #1f2937; max-width: 800px; margin: 0 auto; }
+          
+          /* Header */
+          .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #2563EB; padding-bottom: 20px; margin-bottom: 30px; }
+          .doctor-info h1 { margin: 0; color: #2563EB; font-size: 24px; }
+          .doctor-info p { margin: 4px 0 0; color: #6B7280; font-size: 14px; font-weight: 500; }
+          .visit-meta { text-align: right; }
+          .visit-meta p { margin: 0; font-size: 14px; color: #4B5563; }
+          .visit-number { font-weight: 700; color: #111827; font-size: 16px; margin-bottom: 4px !important; }
+
+          /* Patient Card */
+          .patient-box { background-color: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 8px; padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
+          .info-group label { display: block; font-size: 11px; text-transform: uppercase; color: #9CA3AF; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 2px; }
+          .info-group span { font-size: 15px; font-weight: 600; color: #111827; }
+
+          /* Diagnosis */
+          .diagnosis-box { margin-bottom: 30px; padding-left: 10px; border-left: 4px solid #F59E0B; }
+          .diagnosis-label { font-weight: 700; color: #B45309; font-size: 14px; display: block; margin-bottom: 4px; }
+          .diagnosis-text { font-size: 16px; }
+
+          /* Rx Table */
+          .rx-header { font-size: 24px; font-weight: bold; margin-bottom: 10px; font-family: serif; font-style: italic; color: #2563EB; }
+          table { width: 100%; border-collapse: collapse; margin-bottom: 40px; }
+          th { background-color: #EFF6FF; text-align: left; padding: 12px; font-size: 12px; text-transform: uppercase; color: #1E40AF; border-bottom: 2px solid #DBEAFE; }
+          td { padding: 12px; border-bottom: 1px solid #F3F4F6; font-size: 14px; vertical-align: middle; }
+          .med-name { font-weight: 600; font-size: 15px; }
+          .center { text-align: center; }
+
+          /* Footer */
+          .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #E5E7EB; display: flex; justify-content: space-between; align-items: flex-end; }
+          .signature-box { text-align: center; }
+          .signature-line { width: 200px; border-bottom: 1px solid #111827; margin-bottom: 8px; }
+          .disclaimer { font-size: 10px; color: #9CA3AF; max-width: 60%; }
+        </style>
+      </head>
+      <body>
+        
+        <div class="header">
+          <div class="doctor-info">
+            <h1>Dr. ${doctorName}</h1>
+            <p>General Physician • Doc's CODE Clinic</p>
+          </div>
+          <div class="visit-meta">
+            <p class="visit-number">Visit #${currentVisitNum}</p>
+            <p>${currentDate}</p>
+          </div>
+        </div>
+
+        <div class="patient-box">
+          <div class="info-group">
+            <label>Patient Name</label>
+            <span>${patient.name}</span>
+          </div>
+          <div class="info-group">
+            <label>Patient ID</label>
+            <span>${patient.patientId}</span>
+          </div>
+          <div class="info-group">
+            <label>Age / Gender</label>
+            <span>${patient.age} Yrs / ${patient.gender}</span>
+          </div>
+          <div class="info-group">
+            <label>Visit Type</label>
+            <span>Consultation</span>
+          </div>
+        </div>
+
+        <div class="diagnosis-box">
+          <span class="diagnosis-label">DIAGNOSIS / SYMPTOMS</span>
+          <span class="diagnosis-text">${symptoms}</span>
+        </div>
+
+        <div class="rx-header">Rx</div>
+        <table>
+          <thead>
+            <tr>
+              <th width="40%">Medicine Name</th>
+              <th width="20%" class="center">Frequency (M-A-N)</th>
+              <th width="15%" class="center">Duration</th>
+              <th width="25%">Dosage / Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${medsHtml}
+          </tbody>
+        </table>
+
+        <div class="footer">
+          <div class="disclaimer">
+            This is a computer-generated prescription. Valid without a physical signature for general consultation purposes.
+          </div>
+          <div class="signature-box">
+            <div class="signature-line"></div>
+            <strong>Dr. ${doctorName}</strong>
+          </div>
+        </div>
+
+      </body>
+      </html>`;
+    
     printWindow.document.write(htmlContent);
     printWindow.document.close();
     setTimeout(() => { printWindow.print(); printWindow.close(); }, 500);
@@ -110,7 +205,7 @@ function PatientDetails() {
 
         <div className="patient-details-wrapper">
           
-          {/* --- NEW PROFESSIONAL PATIENT HEADER --- */}
+          {/* Patient Header Card */}
           <div className="patient-header-card">
             <div className="patient-avatar-wrapper">
               <span className="avatar-text">
@@ -139,7 +234,6 @@ function PatientDetails() {
               </div>
             </div>
           </div>
-          {/* --------------------------------------- */}
 
           {/* Clinical Notes */}
           <div className="clinical-section">
@@ -213,9 +307,9 @@ function PatientDetails() {
           <div className="action-bar-glass">
              <button className="text-btn" onClick={() => navigate(-1)}>Cancel</button>
              <div className="right-actions">
-               <button className="btn-secondary" onClick={handlePrint}>Print</button>
+               <button className="btn-secondary" onClick={handlePrint}>🖨️ Print</button>
                <button className="btn-primary" onClick={handleSaveToDB} disabled={isSaving}>
-                 {isSaving ? "Saving..." : "Save Record"}
+                 {isSaving ? "Saving..." : "💾 Save Record"}
                </button>
              </div>
           </div>

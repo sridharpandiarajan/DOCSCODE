@@ -164,7 +164,7 @@ function OldPatient() {
 
                     <button
                       onClick={() =>
-                        navigate("/old-patient-details", {
+                        navigate("/patient-visit-details", {
                           state: { patient, doctorName, doctorUsername },
                         })
                       }

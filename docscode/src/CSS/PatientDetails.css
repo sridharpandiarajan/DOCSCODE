@@ -181,3 +181,11 @@
 .text-btn { background: none; border: none; color: #6B7280; font-weight: 600; cursor: pointer; }
 
 @media (max-width: 768px) { .action-bar-glass { left: 0; padding: 16px 20px; } }
+.symptoms-input {
+  color: #000000;            /* entered text = black */
+}
+
+/* Optional: keep placeholder soft */
+.symptoms-input::placeholder {
+  color: #9CA3AF;            /* light gray placeholder */
+}
