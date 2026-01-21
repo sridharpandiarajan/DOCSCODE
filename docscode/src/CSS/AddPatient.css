@@ -1,80 +1,140 @@
-/* Root & Body Setup */
-body, html, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #f0f4f8;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* Centering wrapper */
+/* Wrapper to center content within the main area */
 .add-patient-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background: linear-gradient(to right, #f0f4f7, #dfe9f3);
+  align-items: flex-start;
+  padding-top: 40px;
+  height: 100%;
 }
 
-/* Form container */
-.add-patient-container {
+/* Main Card Styling */
+.add-patient-card {
   background-color: #ffffff;
-  padding: 50px 40px;
+  padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  width: 380px;
-  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Header Typography */
+.form-header {
+  margin-bottom: 30px;
   text-align: center;
 }
 
-/* Title */
-.add-patient-title {
-  margin-bottom: 20px;
-  font-size: 26px;
-  color: #2c3e50;
+.form-header h2 {
+  font-size: 24px;
+  color: #111827;
+  margin: 0 0 8px 0;
+  font-weight: 700;
 }
 
-/* Input fields */
-.add-patient-form input {
+.form-header p {
+  color: #6B7280;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Form Layout */
+.add-patient-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group.half {
+  flex: 1;
+}
+
+/* Labels */
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Inputs & Selects */
+input, select {
   width: 100%;
-  padding: 14px;
-  margin-bottom: 20px;
+  padding: 12px 16px;
   border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  outline-color: #3498db;
+  border: 1px solid #D1D5DB;
+  font-size: 15px;
+  color: #111827;
+  background-color: #F9FAFB;
+  outline: none;
+  transition: all 0.2s;
+  box-sizing: border-box; /* Fixes width issues */
 }
 
-/* Button */
-.add-patient-form button {
-  width: 97%;
-  padding: 12px;
-  background-color: #4CAF50;
+input:focus, select:focus {
+  border-color: #2563EB;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Fix for Placeholder color in Select */
+select.placeholder-text {
+  color: #9CA3AF;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.submit-btn {
+  flex: 2;
+  padding: 14px;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.add-patient-form button:hover {
-  background-color: #388e3c;
-}
-/* Updated Dropdown Styling to Match Input Fields */
-.add-patient-form select {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
   font-size: 16px;
-  color: #ffffff;
-  background-color: #3b3b3b;
+  transition: transform 0.1s, box-shadow 0.2s;
 }
 
-/* Placeholder-like color for <option value="">Gender</option> */
-.add-patient-form select option[value=""] {
-  color: #838080;
+.submit-btn:hover:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  flex: 1;
+  padding: 14px;
+  background-color: #ffffff;
+  color: #6B7280;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.cancel-btn:hover {
+  background-color: #F3F4F6;
+  color: #374151;
 }

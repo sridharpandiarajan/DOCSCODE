@@ -1,27 +1,37 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import Sidebar from "./Sidebar";
+import Topbar from "./Topbar";
 import "../CSS/AddPatient.css";
+// Ensure you have the main dashboard CSS for layout structure
+import "../CSS/DashBoard.css"; 
 
 function AddPatient() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const doctorName = location.state?.doctorName || "Doctor";
+  const doctorUsername = location.state?.doctorUsername;
+
   const [formData, setFormData] = useState({
     name: "",
     age: "",
     gender: "",
   });
-
-  const navigate = useNavigate();
-  const location = useLocation();
-  const doctorName = location.state?.doctorName || "Doctor";
-  const doctorUsername = location.state?.doctorUsername;
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleCancel = () => {
+    navigate("/dashboard", { state: { doctorName, doctorUsername } });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     const trimmedData = {
       name: formData.name.trim(),
@@ -32,6 +42,7 @@ function AddPatient() {
 
     if (!trimmedData.name || !trimmedData.age || !trimmedData.gender) {
       alert("Please fill in all fields properly.");
+      setIsLoading(false);
       return;
     }
 
@@ -44,92 +55,93 @@ function AddPatient() {
       });
     } catch (error) {
       console.error("❌ Error adding patient:", error);
-      if (error.response?.data?.message) {
-        alert(`Failed to add patient: ${error.response.data.message}`);
-      } else {
-        alert("Failed to add patient. Please try again.");
-      }
+      alert("Failed to add patient. Please check your connection.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    
-    <div className="add-patient-wrapper"style={{ position: "relative" }}>
-      <div
-          style={{
-            position: "absolute",
-            top: "10px",
-            right: "10px",
-            zIndex: 1000,
-          }}
-        >
-          <button
-            onClick={() => {
-              if (doctorName && doctorUsername) {
-                navigate("/dashboard", { state: { doctorName, doctorUsername } });
-              } else {
-                alert("Doctor info missing, cannot navigate");
-              }
-            }}
-            style={{
-              padding: "8px 15px",
-              backgroundColor: "#6c5ce7",
-              color: "white",
-              border: "none",
-              borderRadius: "6px",
-              cursor: "pointer",
-              fontWeight: "600",
-            }}
-          >
-            🏠 Back to Dashboard
-          </button>
+    <div className="dashboard-layout">
+      {/* 1. Sidebar Integration */}
+      <Sidebar doctorName={doctorName} />
+
+      <main className="main-content">
+        {/* 2. Topbar Integration */}
+        <Topbar doctorName={doctorName} />
+
+        <div className="add-patient-wrapper">
+          <div className="add-patient-card">
+            <div className="form-header">
+              <h2>Register New Patient</h2>
+              <p>Enter patient details to create a new medical record.</p>
+            </div>
+
+            <form className="add-patient-form" onSubmit={handleSubmit}>
+              
+              <div className="form-group">
+                <label>Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="e.g. John Doe"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="form-row">
+                <div className="form-group half">
+                  <label>Age</label>
+                  <input
+                    type="number"
+                    name="age"
+                    placeholder="e.g. 34"
+                    value={formData.age}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="form-group half">
+                  <label>Gender</label>
+                  <select
+                    name="gender"
+                    value={formData.gender}
+                    onChange={handleChange}
+                    required
+                    className={!formData.gender ? "placeholder-text" : ""}
+                  >
+                    <option value="" disabled>Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="button-group">
+                <button 
+                  type="button" 
+                  className="cancel-btn" 
+                  onClick={handleCancel}
+                  disabled={isLoading}
+                >
+                  Cancel
+                </button>
+                <button 
+                  type="submit" 
+                  className="submit-btn" 
+                  disabled={isLoading}
+                >
+                  {isLoading ? "Saving..." : "Create Record"}
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div className="add-patient-container">        
-        <form className="add-patient-form" onSubmit={handleSubmit}>
-          <h2 className="add-patient-title">🩺 Add Patient</h2>
-
-          <input
-            type="text"
-            name="name"
-            placeholder="Patient Name"
-            value={formData.name}
-            onChange={handleChange}
-            style={{ width: "90%", padding: "10px", marginBottom: "20px" }}
-            required
-          />
-
-          <input
-            type="number"
-            name="age"
-            placeholder="Age"
-            value={formData.age}
-            onChange={handleChange}
-            style={{ width: "90%", padding: "10px", marginBottom: "20px" }}
-            required
-          />
-
-          <select
-            name="gender"
-            value={formData.gender}
-            onChange={handleChange}
-            required
-            className="dropdown-select"
-            style={{
-              width: "97%",
-              padding: "10px",
-              marginBottom: "20px",
-              color: formData.gender ? "#000" : "#888",
-            }}
-          >
-            <option value="">Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-          </select>
-
-          <button type="submit">➕ Add Patient</button>
-        </form>
-      </div>
+      </main>
     </div>
   );
 }
